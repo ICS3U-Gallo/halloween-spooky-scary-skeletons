@@ -3,6 +3,8 @@ import arcade
 
 WIDTH = 640
 HEIGHT = 480
+X1 = WIDTH // 2
+Y1 = HEIGHT // 2
 
 window = arcade.open_window(WIDTH, HEIGHT, "My Arcade Game")
 
@@ -20,11 +22,10 @@ def update(delta_time):
 @window.event
 def on_draw():
     arcade.start_render()
-# Balloons
-    arcade.draw_line(WIDTH // 2, HEIGHT // 4 + 50, WIDTH // 2, HEIGHT // 4 - 100, arcade.color.BLACK, 1)
-    arcade.draw_line()
-    arcade.draw_line()
- 
+# Balloon strings
+    arcade.draw_line(X1, Y1, X1, Y1 - 175, arcade.color.BLACK, 5)
+    arcade.draw_ellipse_filled(X1, 275, 125, 100, arcade.color.FERRARI_RED, 90)
+
 @window.event
 def on_key_press(key, modifiers):
     pass
@@ -42,3 +43,4 @@ def on_mouse_press(x, y, button, modifiers):
 
 if __name__ == '__main__':
     setup()
+
